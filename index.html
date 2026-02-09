@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ritesh Kumar Verma | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #eaeaea; line-height: 1.6; }
+    header { background: radial-gradient(circle at top, #6a11cb, #2575fc); color: #fff; padding: 80px 20px; text-align: center; position: relative; overflow: hidden; }
+    header h1 { font-size: 2.8rem; }
+    header p { font-size: 1.2rem; margin-top: 10px; }
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    h2 { margin-bottom: 20px; color: #0d6efd; }
+    .about, .skills, .projects, .contact { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); padding: 35px; margin-bottom: 35px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
+    ul { list-style: none; }
+    ul li { padding: 6px 0; }
+    .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .skills-list div { background: skyblue; padding: 10px; border-radius: 8px; text-align: center; font-weight: 500; }
+    .project { margin-bottom: 18px; }
+    .social-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .btn { padding: 12px 22px; border-radius: 30px; color: #fff; font-weight: 600; text-decoration: none; transition: 0.3s ease; }
+    .btn-github { background: #24292e; }
+    .btn-linkedin { background: #0a66c2; }
+    .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+    footer { text-align: center; padding: 25px; background: linear-gradient(135deg, #141e30, #243b55); color: #fff; letter-spacing: 1px; }
+    a { color: #0d6efd; text-decoration: none; }
+    @keyframes blink { 50% { opacity: 0; } }
+    #typing::after { content: '|'; margin-left: 5px; animation: blink 1s infinite; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ritesh Kumar Verma</h1>
+  <p><span id="typing"></span></p>
+  <div class="social-buttons">
+    <a href="https://github.com/RiteshKumarVermaa" class="btn btn-github">GitHub</a>
+    <a href="https://www.linkedin.com/in/ritesh-verma-502b1b380/" class="btn btn-linkedin">LinkedIn</a>
+  </div>
+</header>
+
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    Hello! I am Ritesh Kumar Verma, a passionate web developer and programmer. 
+    I enjoy building simple, clean, and responsive websites while continuously learning new technologies.
+  </p>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skills-list">
+    <div>HTML</div>
+    <div>CSS</div>
+
+    <div>C Programming</div>
+    <div>Python (Basics)</div>
+    <div>Data Structures</div>
+  </div>
+</section>
+
+<section class="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <strong>Portfolio Website</strong>
+    <p>A personal portfolio website using HTML and CSS.</p>
+  </div>
+  <div class="project">
+    <strong>Student Management System</strong>
+    <p>Simple console-based project using C programming.</p>
+  </div>
+  <div class="project">
+    <strong>Search & Sorting Programs</strong>
+    <p>Implemented Bubble Sort and Binary Search algorithms.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p style="font-size:1.1rem;">Want to collaborate or hire me? Let’s connect!</p>
+  <p style="margin-top:10px; font-weight:600;">📧 ritesh.25001213@kiet.edu</p>
+</section>
+
+<footer>
+  <p>© 2026 Ritesh Kumar Verma | All Rights Reserved</p>
+</footer>
+
+<script>
+  const textArray = [
+    "Web Developer",
+    "Programmer",
+    "Creative Thinker",
+    "Tech Enthusiast"
+  ];
+  let index = 0;
+  let charIndex = 0;
+  const typingElement = document.getElementById("typing");
+
+  function typeEffect() {
+    if (charIndex < textArray[index].length) {
+      typingElement.textContent += textArray[index].charAt(charIndex);
+      charIndex++;
+      setTimeout(typeEffect, 120);
+    } else {
+      setTimeout(eraseEffect, 1500);
+    }
+  }
+
+  function eraseEffect() {
+    if (charIndex > 0) {
+      typingElement.textContent = textArray[index].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseEffect, 80);
+    } else {
+      index = (index + 1) % textArray.length;
+      setTimeout(typeEffect, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+</body>
+</html>
+
+
